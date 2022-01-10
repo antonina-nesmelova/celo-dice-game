@@ -6,7 +6,7 @@ Random number is generated from players wallet address, block timestamp and salt
 
 # Live demo
 
-[https://xnesme00.github.io/celo-dice-game/](https://xnesme00.github.io/celo-dice-game/)
+[https://antonina-nesmelova.github.io/celo-dice-game/](https://antonina-nesmelova.github.io/celo-dice-game/)
 
 # Install
 
