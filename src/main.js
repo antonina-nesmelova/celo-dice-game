@@ -3,13 +3,13 @@ import {
   newKitFromWeb3
 } from "@celo/contractkit"
 import BigNumber from "bignumber.js"
-import marketplaceAbi from "../contract/marketplace.abi.json"
+import marketplaceAbi from "../contract/dicegame.abi.json"
 import erc20Abi from "../contract/erc20.abi.json"
 
 const ERC20_DECIMALS = 18
-const casinoContractAddress = "0xe84d540E2Fb6a9e0d07CCCf8237A64bB80b8bDC4"
-const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1"
-const casinoOwnerAddress = '0xaC5521ED700507C121256aA19c0c6b398cA46868'
+const casinoContractAddress = "0x6273C556642ac977eD7C18b7cD039108fC9227b4"
+const cUSDContractAddress = "0x0000000000000000000000000000000000001010"
+const casinoOwnerAddress = '0x5B24bfccAd6614c258B51d188641F611a267Dc06'
 
 let kit
 let contract
@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const connectCeloWallet = async function() {
-  if (window.celo) {
+  if (window.ethereum) {
     notification("⚠️ Please approve this DApp to use it.")
     try {
-      await window.celo.enable()
+      await window.ethereum.enable()
       notificationOff()
 
-      const web3 = new Web3(window.celo)
+      const web3 = new Web3(window.ethereum)
       kit = newKitFromWeb3(web3)
 
       const accounts = await kit.web3.eth.getAccounts()
